@@ -1,0 +1,44 @@
+name: Bug report
+description: Report an installation, build, mapping, or programming problem.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: App version
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: macOS version and Mac CPU
+      description: Include whether the Mac is Apple Silicon or Intel.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where does the problem occur?
+      options:
+        - Installation / opening the app
+        - Environment check / Vivado build
+        - Pin mapping
+        - Board detection / programming
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Board and tool versions
+      description: For Build issues include the Docker image tag and Vivado setup path.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps, expected result, and actual result
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log
+      description: Remove credentials and personal information before posting.
+      render: text
